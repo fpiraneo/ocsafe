@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<info>
+    <id>ocsafe</id>
+    <name>ocSafe</name>
+    <description>
+        We know that ownCloud has it's own cryptograpy app that allows
+        to cypher all directory contents: this may be unwanted or not applicable;
+        in such cases, this app allows you to cypher every file with a different
+        password keeping curious peoples away and allowing practical
+        encrypt / decrypt sequence, directly on the folder.
+    </description>
+    <version>1.0</version>
+    <licence>GNU GPL Version 3</licence>
+    <author>Francesco PIRANEO G. (fpiraneo@gmail.com)</author>
+    <require>6</require>
+    <shipped>true</shipped>
+</info>
