@@ -100,7 +100,7 @@ class safe {
     /**
      * Encrypt
      */
-    function encrypt($user, $filePath, $password) {
+    function encrypt($user, $filePath, $password, $scrambleFileName) {
         // Create user's view
         $dirView = new \OC\Files\View('/' . $user . '/files');
 
@@ -110,8 +110,13 @@ class safe {
         }
         
         // Build destination path
-        $destDir = dirname($filePath);
-        $outPath = $destDir . '/' . MD5(time()) . '.safe';
+        if($scrambleFileName === 1) {
+            $destDir = dirname($filePath);
+            $destFileName = MD5(time());
+            $outPath = $destDir . '/' . $destFileName . '.safe';
+        } else {
+            $outPath = $filePath . '.safe';
+        }
 
         // Check if set algorithm is valid and supported
         if(!$this->checkAlgorithm($this->algorithm)) {

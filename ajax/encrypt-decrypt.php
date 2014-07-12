@@ -35,7 +35,8 @@ try {
     if(substr($filePath, -5) === '.safe') {
         $destFileName = $worker->decrypt($user, $filePath, $password);
     } else {
-        $destFileName = $worker->encrypt($user, $filePath, $password);
+        $scrambleFileName = intval(OCP\Config::getAppValue('ocsafe', 'scrambleFileName'));
+        $destFileName = $worker->encrypt($user, $filePath, $password, $scrambleFileName);
     }
 } catch(\OCA\OCSafe\WrongCKStringException $exc) {
     die('BADCKS');

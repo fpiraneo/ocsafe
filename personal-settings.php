@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Copyright 2014 by Francesco PIRANEO G. (fpiraneo@gmail.com)
  * 
@@ -19,17 +18,14 @@
  * along with ocsafe.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-\OCP\App::checkAppEnabled('ocsafe');
+OCP\User::checkLoggedIn();
 
-\OCP\App::register(Array(
-	'order' => 10,
-	'id' => 'ocsafe',
-	'name' => 'ocSafe'
-));
+// Handle translations
+$l = new \OC_L10N('ocsafe');
 
-OCP\Util::addStyle('ocsafe','ocsStyles');
+$scrambleFileName = intval(OCP\Config::getAppValue('ocsafe', 'scrambleFileName'));
 
-OCP\Util::addScript('ocsafe', 'ocsaction');
-OCP\Util::addScript('ocsafe', 'savePersonalSettings');
+$tmpl = new \OCP\Template('ocsafe', 'personal-settings');
+$tmpl->assign('scrambleFileName', ($scrambleFileName === 1) ? 'CHECKED' : '');
 
-\OCP\App::registerPersonal('ocsafe', 'personal-settings');
+return $tmpl->fetchPage();

@@ -14,7 +14,7 @@
  * GNU General Public License for more details.
  * 
  * You should have received a copy of the GNU General Public License
- * along with aletsch.  If not, see <http://www.gnu.org/licenses/>.
+ * along with ocsafe.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 $(document).ready(function() {

@@ -26,5 +26,8 @@ $TRANSLATIONS = array(
     'Decrypting...' => 'Decodifica...',
     'Unable to perform operation! Check the logs.' => 'Impossibile completare l\'operazione! Controllare i log.',
     'Unable to perform operation! Ajax error.' => 'Impossibile completare \'operazione! Errore AJAX.',
-    'Wrong password or corrupted file.' => 'Password errata o file danneggiato.'
+    'Wrong password or corrupted file.' => 'Password errata o file danneggiato.',
+    'Scramble file name when encrypting' => 'Nascondere il nome del file alla codifica',
+    'Settings not saved! Data base error!' => 'Impostazioni non salvate! Errore nel data base',
+    'Settings not saved! Communication error!' => 'Impostazioni non salvate! Errore di comunicazione!'
 );
