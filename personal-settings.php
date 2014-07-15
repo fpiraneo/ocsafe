@@ -19,6 +19,7 @@
  */
 
 OCP\User::checkLoggedIn();
+OCP\Util::addScript('ocsafe', 'savePersonalSettings');
 
 // Handle translations
 $l = new \OC_L10N('ocsafe');

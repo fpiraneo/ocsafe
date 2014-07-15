@@ -18,30 +18,29 @@
  */
 
 $(function() {
-    $( "#ocsafe_settings" )
-        .click(function() {
-            var v_scrambleFileName = $('#scrambleFileName').is(":checked");
-            
-            $.ajax({
-                url: OC.filePath('ocsafe', 'ajax', 'savePersonalSettings.php'),
-                async: false,
-                timeout: 2000,
+    $("#scrambleFileName").click(function() {
+		var v_scrambleFileName = $('#scrambleFileName').is(":checked");
+		
+		$.ajax({
+			url: OC.filePath('ocsafe', 'ajax', 'savePersonalSettings.php'),
+			async: false,
+			timeout: 2000,
 
-                data: {
-                    scrambleFileName: v_scrambleFileName
-                },
+			data: {
+				scrambleFileName: v_scrambleFileName
+			},
 
-                type: "POST",
+			type: "POST",
 
-                success: function( result ) {
-                    if(result !== 'OK') {
-                        window.alert(t('ocsafe', 'Settings not saved! Data base error!'))
-                    }
-                },
+			success: function( result ) {
+				if(result !== 'OK') {
+					window.alert(t('ocsafe', 'Settings not saved! Data base error!'))
+				}
+			},
 
-                error: function( xhr, status ) {
-                    window.alert(t('ocsafe', 'Settings not saved! Communication error!'))
-                }                            
-            });
-        });
-    });
+			error: function( xhr, status ) {
+				window.alert(t('ocsafe', 'Settings not saved! Communication error!'))
+			}                            
+		});
+	});
+});

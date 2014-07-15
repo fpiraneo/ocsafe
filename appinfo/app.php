@@ -30,6 +30,5 @@
 OCP\Util::addStyle('ocsafe','ocsStyles');
 
 OCP\Util::addScript('ocsafe', 'ocsaction');
-OCP\Util::addScript('ocsafe', 'savePersonalSettings');
 
 \OCP\App::registerPersonal('ocsafe', 'personal-settings');
